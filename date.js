@@ -4,7 +4,7 @@
  * @author João Oliveira <@Joao_Oliveira>
  *
  */
-"use strict";
+'use strict';
 
 /**
  * Unix Timestamp to Human Date Format
@@ -12,7 +12,7 @@
  */
 app.filter('jsDate', function($filter){    
     return function(date) {
-        return date ? moment(date,"YYYY-MM-DD HH:mm:ss").format("DD-MM-YYYY") : "";
+        return date ? moment(date,'YYYY-MM-DD HH:mm:ss').format('DD-MM-YYYY') : '';
     }; 
 });
 
@@ -20,9 +20,9 @@ app.filter('jsDate', function($filter){
  * Filter to convert date to weekday
  * 1984-02-28 00:00:00 -> Tuesday
  */
-app.filter("jsWeekday", function($filter){
+app.filter('jsWeekday', function($filter){
 	return function(date) {
-		return moment(date,"YYYY-MM-DD HH:mm:ss").lang("pt").format("dddd");
+		return moment(date,'YYYY-MM-DD HH:mm:ss').lang('pt').format('dddd');
 	};
 });
 
@@ -32,6 +32,6 @@ app.filter("jsWeekday", function($filter){
  */
 app.filter('jsDateTimeMinutes', function($filter){    
     return function(date) {
-        return date ? moment(date,"YYYY-MM-DD HH:mm:ss").format("DD-MM-YYYY HH:mm") : "";
+        return date ? moment(date,'YYYY-MM-DD HH:mm:ss').format('DD-MM-YYYY HH:mm') : '';
     }; 
 });

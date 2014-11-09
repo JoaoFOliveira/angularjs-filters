@@ -4,12 +4,12 @@
  * @author João Oliveira <@Joao_Oliveira>
  *
  */
-"use strict";
+'use strict';
 
 /**
  * Filter to convert units to integer
  */
-app.filter("jsInteger", function($filter) {
+app.filter('jsInteger', function($filter) {
 	return function(number) {
 		if(isNaN(number)) {
 			return number;
@@ -22,9 +22,9 @@ app.filter("jsInteger", function($filter) {
 /**
  * Filter to convert units to float
  */
-app.filter("jsCommas", function($filter) {
+app.filter('jsCommas', function($filter) {
 	return function(str) {
-		return str.replace(".",",");
+		return str.replace('.',',');
 	};
 });
 
@@ -33,7 +33,7 @@ app.filter("jsCommas", function($filter) {
  */
 app.filter('jsFirstLetter', function($filter){    
     return function(name) {
-        return name ? name.charAt(0) : "-";
+        return name ? name.charAt(0) : '-';
     }; 
 });
 
@@ -45,12 +45,12 @@ app.filter('jsFirstLetter', function($filter){
  * 
  * @return array The filtered list
  */
-app.filter("jsFilterList", function() {
+app.filter('jsFilterList', function() {
 	return function(list, options) {
 		var filtered = [];
 		
 		angular.forEach(list, function(value, key){
-			if(value.ParameterToFilterBy == options.ParameterToFilterBy) {
+			if(value.ParameterToFilterBy === options.ParameterToFilterBy) {
 				filtered.push(value);
 			}				
 		});

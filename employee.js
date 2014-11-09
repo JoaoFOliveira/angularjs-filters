@@ -4,7 +4,7 @@
  * @author João Oliveira <@Joao_Oliveira>
  *
  */
-"use strict";
+'use strict';
 
 //
 // Padded employee number
