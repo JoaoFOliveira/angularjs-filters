@@ -2,6 +2,7 @@
  * AngularJS Filters
  *
  * @author João Oliveira <@Joao_Oliveira>
+ * load and initialize angular.js application
  *
  */
 'use strict';
@@ -9,7 +10,7 @@
 /**
  * Filter to convert units to integer
  */
-app.filter('jsInteger', function($filter) {
+app.filter('jsInteger', function() {
 	return function(number) {
 		if(isNaN(number)) {
 			return number;
@@ -22,7 +23,7 @@ app.filter('jsInteger', function($filter) {
 /**
  * Filter to convert units to float
  */
-app.filter('jsCommas', function($filter) {
+app.filter('jsCommas', function() {
 	return function(str) {
 		return str.replace('.',',');
 	};
@@ -31,7 +32,7 @@ app.filter('jsCommas', function($filter) {
 /**
  * Filter the first character of a string
  */
-app.filter('jsFirstLetter', function($filter){    
+app.filter('jsFirstLetter', function(){    
     return function(name) {
         return name ? name.charAt(0) : '-';
     }; 
@@ -49,7 +50,7 @@ app.filter('jsFilterList', function() {
 	return function(list, options) {
 		var filtered = [];
 		
-		angular.forEach(list, function(value, key){
+		angular.forEach(list, function(value){
 			if(value.ParameterToFilterBy === options.ParameterToFilterBy) {
 				filtered.push(value);
 			}				
